@@ -38,18 +38,20 @@ public class StudentRepository {
 
     public Student findStudent(String student){
         // your code goes here
-        if (studentMap.containsKey(student)){
-            return studentMap.get(student);
-        }
-        return null;
+//        if (studentMap.containsKey(student)){
+//            return studentMap.get(student);
+//        }
+//        return null;
+        return studentMap.get(student);
     }
 
     public Teacher findTeacher(String teacher){
         // your code goes here
-        if (teacherMap.containsKey(teacher)){
-            return teacherMap.get(teacher);
-        }
-        return null;
+//        if (teacherMap.containsKey(teacher)){
+//            return teacherMap.get(teacher);
+//        }
+//        return null;
+        return teacherMap.get(teacher);
     }
 
     public List<String> findStudentsFromTeacher(String teacher){
@@ -64,11 +66,12 @@ public class StudentRepository {
 
     public List<String> findAllStudents(){
         // your code goes here
-        List<String> studentList = new ArrayList<>();
-        for (String student : studentMap.keySet()){
-            studentList.add(student);
-        }
-        return studentList;
+//        List<String> studentList = new ArrayList<>();
+//        for (String student : studentMap.keySet()){
+//            studentList.add(student);
+//        }
+//        return studentList;
+        return new ArrayList<>(studentMap.keySet());
     }
 
     public void deleteTeacher(String teacher){
