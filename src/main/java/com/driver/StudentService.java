@@ -24,6 +24,7 @@ public class StudentService {
     }
 
     public Student findStudent(String studentName){
+
         return studentRepository.findStudent(studentName);
     }
 
