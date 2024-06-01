@@ -43,12 +43,13 @@ public class StudentController {
     @GetMapping("/get-student-by-name/{name}")
     public ResponseEntity<Student> getStudentByName(@PathVariable String name){
 //        Student student = null; // Assign student by calling service layer method
-//        return new ResponseEntity<>(student, HttpStatus.CREATED);
         Student student = studentService.findStudent(name);
-        if(student != null){
-            return new ResponseEntity<>(student, HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(student, HttpStatus.CREATED);
+
+//        if(student != null){
+//            return new ResponseEntity<>(student, HttpStatus.OK);
+//        }
+//        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
     }
 
@@ -70,7 +71,7 @@ public class StudentController {
     public ResponseEntity<List<String>> getAllStudents(){
         // List<String> students = null; // Assign list of student by calling service layer method
         List<String> students = studentService.findAllStudents();
-        return new ResponseEntity<>(students, HttpStatus.OK);
+        return new ResponseEntity<>(students, HttpStatus.CREATED);
     }
 
     @DeleteMapping("/delete-teacher-by-name")
